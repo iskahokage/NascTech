@@ -1,7 +1,9 @@
+import Router from "./Routes/Router";
+
 function App() {
   return (
     <div className="App">
-        asd mara
+      <Router/>
     </div>
   );
 }
