@@ -4,14 +4,14 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 const dotenv = require('dotenv').config();
-const {DB_NAME, DB_PASSWORD, DB_PORT, DB_HOST, DB_USER} = process.env;
+const {DB_NAME, DB_PASSWORD, DB_USER} = process.env;
 module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: `nasctech`,
-      user: `postgres`,
-      password: `1`
+      database: `${DB_NAME}`,
+      user: `${DB_USER}`,
+      password: `${DB_PASSWORD}`
     },
     pool: {
       min: 2,
