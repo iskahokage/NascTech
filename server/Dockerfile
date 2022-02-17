@@ -2,13 +2,13 @@ FROM node
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package*.json ./
 
-COPY package-lock.json ./
+RUN npm install
 
-COPY ./ ./
+RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache
 
-RUN npm i
+COPY . .
 
 ENV PORT 8000
 
